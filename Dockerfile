@@ -12,7 +12,8 @@ RUN pip3 install -r requirements.txt
 RUN python3 --version
 
 # Define exposed ports
-EXPOSE 5000
+#EXPOSE 5000
+CMD gunicorn --bind 0.0.0.0:$PORT wsgi
 
 # Instruct the container to run the app
 ENTRYPOINT ["python3"]
